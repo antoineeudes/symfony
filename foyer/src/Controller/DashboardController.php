@@ -30,4 +30,20 @@ class DashboardController extends AbstractController
     {
         return new JsonResponse(array('id' => $id));
     }
+    public function menu()
+    {
+        // On fixe en dur une liste ici, bien entendu par la suite
+        // on la récupérera depuis la BDD !
+        $listAdverts = array(
+          array('id' => 2, 'title' => 'Recherche développeur Symfony'),
+          array('id' => 5, 'title' => 'Mission de webmaster'),
+          array('id' => 9, 'title' => 'Offre de stage webdesigner')
+        );
+
+        return $this->render('dashboard/menu.html.twig', array(
+          // Tout l'intérêt est ici : le contrôleur passe
+          // les variables nécessaires au template !
+          'listAdverts' => $listAdverts
+        ));
+    }
 }
