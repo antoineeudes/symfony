@@ -4,4 +4,20 @@
 
 dashboard:
     path: /
-    controller: App\Controller\DashboardController::index
+    defaults:
+        _controller: App\Controller\DashboardController::index
+
+platform_view:
+    path: /advert/{id}
+    defaults:
+        _controller: App\Controller\DashboardController::view
+
+platform_add:
+    path: /add
+    defaults:
+        _controller: App\Controller\DashboardController::add
+
+jsontest:
+    path: /jsontest/{id}
+    defaults:
+        _controller: App\Controller\DashboardController::JSONtest
